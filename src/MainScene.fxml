@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="fondo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainSceneController">
+   <children>
+      <ImageView fitHeight="620.0" fitWidth="436.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/foto.jpg" />
+         </image>
+      </ImageView>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="620.0" prefWidth="370.0">
+         <children>
+            <MenuButton fx:id="menuLineas_INICIO" layoutX="14.0" layoutY="195.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="320.0" text="Línea" />
+            <MenuButton fx:id="menuEstaciones_INICIO" disable="true" layoutX="14.0" layoutY="242.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="320.0" text="Estación" />
+            <MenuButton fx:id="menuLineas_FIN" layoutX="14.0" layoutY="316.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="320.0" text="Línea" />
+            <MenuButton fx:id="menuEstaciones_FIN" disable="true" layoutX="14.0" layoutY="357.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="320.0" text="Estación" />
+            <Text fill="WHITE" layoutX="30.0" layoutY="189.0" stroke="#a62e44" strokeType="OUTSIDE" strokeWidth="2.0" text="Seleccione estación de salida">
+               <font>
+                  <Font name="Calibri Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="23.0" layoutY="310.0" stroke="#a62e44" strokeType="OUTSIDE" strokeWidth="2.0" text="Seleccione estación de llegada">
+               <font>
+                  <Font name="Calibri Bold" size="24.0" />
+               </font>
+            </Text>
+            <ImageView blendMode="SRC_ATOP" fitHeight="150.0" fitWidth="200.0" layoutX="98.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../media/icon.png" />
+               </image>
+            </ImageView>
+          <Button fx:id="button" layoutX="147.0" layoutY="404.0" mnemonicParsing="false" onAction="#calcularRecorrido" prefHeight="33.0" prefWidth="60.0" style="-fx-background-color: #fc6f03;" text="OK" textFill="WHITE" textOverrun="CLIP" />
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="659.0" fitWidth="546.0" layoutX="356.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/mapa.png" />
+         </image>
+      </ImageView>
+      <Line fx:id="Obs_Tac" endX="-67.20001220703125" endY="-45.19999694824219" layoutX="575.0" layoutY="272.0" startX="-103.99999237060547" startY="-6.0" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Tac_Jua" endX="-72.19998168945312" endY="-50.40000915527344" layoutX="616.0" layoutY="242.0" startX="-107.4000244140625" startY="-16.800003051757812" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Jua_Cha" endX="-8.399993896484375" endY="-124.80000305175781" layoutX="585.0" layoutY="282.0" startX="-40.399993896484375" startY="-91.19999694824219" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Cha_Sev" endX="-8.399993896484375" endY="-124.00000762939453" layoutX="621.0" layoutY="246.0" startX="-43.600006103515625" startY="-88.80000305175781" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Sev_Ins" endX="-8.399993896484375" endY="-118.5999984741211" layoutX="653.0" layoutY="211.0" startX="-36.399993896484375" startY="-93.79999542236328" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Ins_Cua" endX="3.000030517578125" endY="-93.79999542236328" layoutX="688.0" layoutY="188.0" startX="-40.199981689453125" startY="-93.79999542236328" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Cua_Bal" endX="3.000030517578125" endY="-93.79999542236328" layoutX="731.0" layoutY="188.0" startX="-40.199981689453125" startY="-93.79999542236328" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Uni_Cop" endX="-40.199981689453125" endY="-128.39999389648438" layoutX="773.0" layoutY="632.0" startX="-40.199981689453125" startY="-93.79999542236328" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Cop_Quev" endX="-49.600067138671875" endY="-173.60000610351562" layoutX="783.0" layoutY="642.0" startX="-49.600067138671875" startY="-139.99996948242188" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Quev_Viv" endX="-49.600067138671875" endY="-177.99996948242188" layoutX="783.0" layoutY="612.0" startX="-49.600067138671875" startY="-139.99996948242188" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Viv_Coy" endX="-59.600067138671875" endY="-222.39999389648438" layoutX="793.0" layoutY="622.0" startX="-59.600067138671875" startY="-186.39999389648438" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Coy_Zap" endX="-70.39999389648438" endY="-266.79998779296875" layoutX="803.0" layoutY="632.0" startX="-70.39999389648438" startY="-233.19998168945312" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Zap_Div" endX="-70.39999389648438" endY="-262.1999816894531" layoutX="803.0" layoutY="593.0" startX="-70.39999389648438" startY="-227.79998779296875" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Div_Eug" endX="-70.39999389648438" endY="-262.1999816894531" layoutX="803.0" layoutY="555.0" startX="-70.39999389648438" startY="-227.79998779296875" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Eug_Eti" endX="-70.39999389648438" endY="-265.0" layoutX="803.0" layoutY="527.0" startX="-70.39999389648438" startY="-230.60000610351562" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Eti_CenMed" endX="-79.60006713867188" endY="-309.4000244140625" layoutX="813.0" layoutY="537.0" startX="-79.60006713867188" startY="-274.1999816894531" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="CenMed_HGen" endX="-79.60006713867188" endY="-336.4000244140625" layoutX="813.0" layoutY="500.0" startX="-79.60006713867188" startY="-274.1999816894531" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="HGen_NH" endX="-89.60006713867188" endY="-382.3999938964844" layoutX="823.0" layoutY="510.0" startX="-89.60006713867188" startY="-347.20001220703125" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="NH_Bal" endX="-99.60006713867188" endY="-426.0" layoutX="833.0" layoutY="520.0" startX="-99.60006713867188" startY="-393.20001220703125" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Bal_Jua" endX="-99.60006713867188" endY="-437.79998779296875" layoutX="833.0" layoutY="467.0" startX="-99.60006713867188" startY="-373.0" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Bar_Mix" endX="-99.60006713867188" endY="-429.0" layoutX="607.0" layoutY="794.0" startX="-99.60006713867188" startY="-370.6000061035156" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Mix_SAntonio" endX="-99.60006713867188" endY="-429.0" layoutX="607.0" layoutY="749.0" startX="-99.60006713867188" startY="-383.6000061035156" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="SAntonio_SPedro" endX="-99.60006713867188" endY="-429.0" layoutX="607.0" layoutY="717.0" startX="-99.60006713867188" startY="-397.3999938964844" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="SPedro_Tac" endX="-99.60006713867188" endY="-458.20001220703125" layoutX="607.0" layoutY="685.0" startX="-99.60006713867188" startY="-397.3999938964844" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Tac_Cons" endX="-99.60006713867188" endY="-458.20001220703125" layoutX="607.0" layoutY="622.0" startX="-99.60006713867188" startY="-397.3999938964844" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Con_Aud" endX="-99.60006713867188" endY="-458.20001220703125" layoutX="607.0" layoutY="560.0" startX="-99.60006713867188" startY="-397.3999938964844" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Aud_Pol" endX="-99.60006713867188" endY="-458.20001220703125" layoutX="607.0" layoutY="499.0" startX="-99.60006713867188" startY="-397.3999938964844" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Tac_Pat" endX="-30.000030517578125" endY="-281.4000244140625" layoutX="617.0" layoutY="509.0" startX="-110.00003051757812" startY="-281.4000244140625" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Pal_Chil" endX="-30.000030517578125" endY="-281.4000244140625" layoutX="707.0" layoutY="508.0" startX="-119.20004272460938" startY="-281.4000244140625" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Chil_CenMed" endX="16.399932861328125" endY="-290.4000244140625" layoutX="718.0" layoutY="518.0" startX="-38.000030517578125" startY="-290.4000244140625" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="CenMed_LazCar" endX="52.399932861328125" endY="-290.4000244140625" layoutX="773.0" layoutY="517.0" startX="-38.000030517578125" startY="-290.4000244140625" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Mix_Ins" endX="-46.800018310546875" endY="-281.4000244140625" layoutX="617.0" layoutY="647.0" startX="-110.00003051757812" startY="-281.4000244140625" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Ins_H20Nov" endX="-39.800018310546875" endY="-281.4000244140625" layoutX="686.0" layoutY="647.0" startX="-110.00003051757812" startY="-281.4000244140625" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="H20Nov_Zap" endX="-30.200042724609375" endY="-281.4000244140625" layoutX="762.0" layoutY="647.0" startX="-110.00003051757812" startY="-281.4000244140625" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="Zap_PVenad" endX="-23.200042724609375" endY="-281.4000244140625" layoutX="843.0" layoutY="647.0" startX="-110.00003051757812" startY="-281.4000244140625" stroke="#158ed4" strokeWidth="6.0" />
+      <Line fx:id="PVenad_Eje" endX="-40.39990234375" endY="-246.99996948242188" layoutX="913.0" layoutY="693.0" startX="-92.39993286132812" startY="-328.6000061035156" stroke="#158ed4" strokeWidth="6.0" />
+      <Circle fx:id="Mixcoac" fill="#952f57" layoutX="506.0" layoutY="366.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="SanAntonio" fill="#952f57" layoutX="506.0" layoutY="322.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="SanPedrodelosPinos" fill="#8f2e2e" layoutX="506.0" layoutY="283.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Barranca" fill="#952f57" layoutX="506.0" layoutY="423.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="InsurgentesSur" fill="#952f57" layoutX="571.0" layoutY="366.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="H20Nov" fill="#952f57" layoutX="648.0" layoutY="366.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Zapata" fill="#952f57" layoutX="732.0" layoutY="366.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Division" fill="#952f57" layoutX="732.0" layoutY="332.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Eugenia" fill="#952f57" layoutX="732.0" layoutY="294.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Etiopia" fill="#952f57" layoutX="732.0" layoutY="261.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Medico" fill="#952f57" layoutX="732.0" layoutY="228.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Coyoacan" fill="#952f57" layoutX="732.0" layoutY="401.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Viveros" fill="#952f57" layoutX="732.0" layoutY="434.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Quevedo" fill="#952f57" layoutX="732.0" layoutY="469.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Copilco" fill="#952f57" layoutX="732.0" layoutY="505.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Universidad" fill="#952f57" layoutX="732.0" layoutY="539.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Tacubaya" fill="#952f57" layoutX="506.0" layoutY="228.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Patriotismo" fill="#952f57" layoutX="586.0" layoutY="228.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Chilpancingo" fill="#952f57" layoutX="677.0" layoutY="228.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="LazaroCardenas" fill="#952f57" layoutX="826.0" layoutY="228.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="ParqueVenados" fill="#952f57" layoutX="819.0" layoutY="366.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="EjeCentral" fill="#952f57" layoutX="874.0" layoutY="445.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Observatorio" fill="#952f57" layoutX="470.0" layoutY="261.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Juanacatlan" fill="#952f57" layoutX="542.0" layoutY="192.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Chapultepec" fill="#952f57" layoutX="575.0" layoutY="159.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Sevilla" fill="#952f57" layoutX="608.0" layoutY="122.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Insurgentes" fill="#952f57" layoutX="648.0" layoutY="93.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Cuauhtemoc" fill="#952f57" layoutX="688.0" layoutY="93.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Balderas" fill="#952f57" layoutX="732.0" layoutY="93.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Niños" fill="#952f57" layoutX="732.0" layoutY="128.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Hospital" fill="#952f57" layoutX="732.0" layoutY="164.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Juarez" fill="#952f57" layoutX="732.0" layoutY="27.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle id="Polanco" fx:id="Polanco" fill="#952f57" layoutX="506.0" layoutY="38.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Auditorio" fill="#952f57" layoutX="506.0" layoutY="104.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="Constituyentes" fill="#952f57" layoutX="506.0" layoutY="166.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Text layoutX="387.0" layoutY="513.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiempo estimado:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Text>
+      <Text fx:id="textoETA" layoutX="387.0" layoutY="544.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
